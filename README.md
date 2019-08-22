@@ -13,19 +13,21 @@
 ## How to use it
 You have to use it with a compatible opentracing tracer :
 ```js
-const OpentTracingMixin = require('moleculer-opentracing')
+const OpenTracingMixin = require('moleculer-opentracing')
 const { Tracer } = require('opentracing')
 
 module.exports = {
-  mixins: [OpentTracingMixin(new Tracer())]
+  name: 'opentracing',
+  mixins: [OpenTracingMixin(new Tracer())]
 }
 ```
 Exemple with datadog :
 ```js
-const OpentTracingMixin = require('moleculer-opentracing')
+const OpenTracingMixin = require('moleculer-opentracing')
 const Tracer = require('dd-trace').init()
 
 module.exports = {
-  mixins: [OpentTracingMixin(Tracer)]
+  name: 'datadog',
+  mixins: [OpenTracingMixin(Tracer)]
 }
 ```
